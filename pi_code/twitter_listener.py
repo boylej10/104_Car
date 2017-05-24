@@ -36,9 +36,9 @@ class StdOutListener(tweepy.StreamListener):
 if __name__ == '__main__':
     # http://stackoverflow.com/questions/419163/what-does-if-name-main-do
     l = StdOutListener()
-    print "Showing all new tweets for #coventry:"
+    print "Showing all new tweets for #104MCtest:"
     # There are different kinds of streams: public stream, user stream, multi-user streams
-        # In this example follow #programming tag   
+        # In this example follow #programming tag
     # For more details refer to https://dev.twitter.com/docs/streaming-apis
     stream = tweepy.Stream(auth, l)
-    stream.filter(track=['coventry'])
+    stream.filter(track=['104MCtest'])

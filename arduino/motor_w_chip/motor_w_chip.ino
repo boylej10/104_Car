@@ -43,7 +43,7 @@ void loop() {
     }
   }
 
-  if(motorDirection == 1){
+  if(motorDirection == 0){
     digitalWrite(controlPin1, LOW);
     digitalWrite(controlPin2, HIGH);
   }

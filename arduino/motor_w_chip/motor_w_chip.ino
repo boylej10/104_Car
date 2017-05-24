@@ -14,6 +14,8 @@ int motorEnabled = 0;
 int motorSpeed = 0;
 int motorDirection = 1;
 
+String readString;
+
 void setup() {
   pinMode(directionSwitchPin, INPUT);
   pinMode(onOffSwitchStatePin, INPUT);
@@ -22,7 +24,9 @@ void setup() {
   pinMode(enablePin, OUTPUT);
 
   digitalWrite(enablePin, LOW);
-
+  
+  Serial.begin(9600);
+  
 }
 
 void loop() {
@@ -43,7 +47,7 @@ void loop() {
     }
   }
 
-  if(motorDirection == 0){
+  if(motorDirection == 1){
     digitalWrite(controlPin1, LOW);
     digitalWrite(controlPin2, HIGH);
   }
@@ -59,6 +63,23 @@ void loop() {
 
   else{
     analogWrite(enablePin, 0);
+  }
+
+  while (!Serial.available()) {}
+
+  while (Serial.available()){
+    if (Serial.available() >0){
+      char c = Serial.read();
+      readString = c;
+    }
+    if (readString.length() >0){
+      Serial.println("Message from Arduino: "+ readString);
+      if (readString == "1"){
+        digitalWrite(controlPin1, LOW);
+        digitalWrite(controlPin2, HIGH);
+        Serial.println("Arduino: Someone sent a tweet; motor on!");
+      }
+    }
   }
 
   previousDirectionSwitchState = directionSwitchState;

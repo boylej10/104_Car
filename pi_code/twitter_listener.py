@@ -34,11 +34,33 @@ class StdOutListener(tweepy.StreamListener):
         print status
 
 if __name__ == '__main__':
-    # http://stackoverflow.com/questions/419163/what-does-if-name-main-do
-    l = StdOutListener()
-    print "Showing all new tweets for #104MCtest:"
-    # There are different kinds of streams: public stream, user stream, multi-user streams
+    try:
+        # http://stackoverflow.com/questions/419163/what-does-if-name-main-do
+        l = StdOutListener()
+        print "Showing all new tweets for #104MCtest:"
+        # There are different kinds of streams: public stream, user stream, multi-user streams
         # In this example follow #programming tag
-    # For more details refer to https://dev.twitter.com/docs/streaming-apis
-    stream = tweepy.Stream(auth, l)
-    stream.filter(track=['104MCtest'])
+        # For more details refer to https://dev.twitter.com/docs/streaming-apis
+        stream = tweepy.Stream(auth, l, timeout=60)
+        stream.filter(track=['104MCtest'])
+    except KeyboardInterrupt:
+        sys.exit()
+    except AttributeError as e:
+        print('AttributeError was returned, stupid bug')
+        pass
+    except tweepy.TweepError as e:
+        print('Below is the printed exception')
+        print(e)
+        if '401' in e:
+            # not sure if this will even work
+            print('Below is the response that came in')
+            print(e)
+            sleep(60)
+            pass
+        else:
+            #raise an exception if another status code was returned, we don't like other kinds
+            raise e
+    except Exception as e:
+        print "Error. Restarting Stream.... Error: "
+        print e.__doc__
+        print e.message

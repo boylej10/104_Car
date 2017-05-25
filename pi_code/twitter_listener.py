@@ -37,7 +37,7 @@ class StdOutListener(tweepy.StreamListener):
         elif "left" in decoded["text"]:
             ser.write("3")
             print 'left'
-        elif "write" in decoded["text"]:
+        elif "right" in decoded["text"]:
             ser.write("4")
             print 'right'
         else:

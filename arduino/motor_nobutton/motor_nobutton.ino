@@ -42,7 +42,7 @@ void loop(){
         digitalWrite(motorPin2, HIGH);
         digitalWrite(motorPin3, LOW);
         digitalWrite(motorPin4, HIGH);
-        delay(1000); 
+        delay(1500); 
             
         //And this code will stop motors
         digitalWrite(motorPin1, LOW);
@@ -60,7 +60,7 @@ void loop(){
         digitalWrite(motorPin2, LOW);
         digitalWrite(motorPin3, HIGH);
         digitalWrite(motorPin4, LOW);
-        delay(1000);
+        delay(1500);
         //And this code will stop motors
         digitalWrite(motorPin1, LOW);
         digitalWrite(motorPin2, LOW);
@@ -77,7 +77,7 @@ void loop(){
         digitalWrite(motorPin2, HIGH);
         digitalWrite(motorPin3, LOW);
         digitalWrite(motorPin4, LOW);
-        delay(500);
+        delay(550);
         //And this code will stop motors
         digitalWrite(motorPin1, LOW);
         digitalWrite(motorPin2, LOW);
@@ -94,7 +94,7 @@ void loop(){
         digitalWrite(motorPin2, LOW);
         digitalWrite(motorPin3, LOW);
         digitalWrite(motorPin4, HIGH);
-        delay(500);
+        delay(550);
         //And this code will stop motors
         digitalWrite(motorPin1, LOW);
         digitalWrite(motorPin2, LOW);

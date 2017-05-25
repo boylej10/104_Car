@@ -37,44 +37,75 @@ void loop(){
     if (readString.length() >0){
       Serial.println("Message from Arduino: "+ readString);
       if (readString == "1"){
-        
-
         //This code  will turn Motor A clockwise for 2 sec.
         digitalWrite(motorPin1, HIGH);
         digitalWrite(motorPin2, LOW);
         digitalWrite(motorPin3, LOW);
         digitalWrite(motorPin4, LOW);
         delay(2000); 
-        //This code will turn Motor A counter-clockwise for 2 sec.
-        digitalWrite(motorPin1, LOW);
-        digitalWrite(motorPin2, HIGH);
-        digitalWrite(motorPin3, LOW);
-        digitalWrite(motorPin4, LOW);
-        delay(2000);
-    
-        //This code will turn Motor B clockwise for 2 sec.
-        digitalWrite(motorPin1, LOW);
-        digitalWrite(motorPin2, LOW);
-        digitalWrite(motorPin3, HIGH);
-        digitalWrite(motorPin4, LOW);
-        delay(2000); 
-        //This code will turn Motor B counter-clockwise for 2 sec.
-        digitalWrite(motorPin1, LOW);
-        digitalWrite(motorPin2, LOW);
-        digitalWrite(motorPin3, LOW);
-        digitalWrite(motorPin4, HIGH);
-        delay(2000);    
-    
+            
         //And this code will stop motors
         digitalWrite(motorPin1, LOW);
         digitalWrite(motorPin2, LOW);
         digitalWrite(motorPin3, LOW);
         digitalWrite(motorPin4, LOW);
         
-        Serial.println("Arduino: Someone sent a tweet; motor on!");
+        Serial.println("Arduino: Moving forward!");
 
         break;
       }
+      else if (readString == "2"){
+        //This code will turn Motor A counter-clockwise for 2 sec.
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, HIGH);
+        digitalWrite(motorPin3, LOW);
+        digitalWrite(motorPin4, LOW);
+        delay(2000);
+        //And this code will stop motors
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, LOW);
+        digitalWrite(motorPin3, LOW);
+        digitalWrite(motorPin4, LOW);
+        
+        Serial.println("Arduino: Moving backward!");
+
+        break;
+      }
+      else if (readString == "3"){
+        //This code will turn Motor B clockwise for 2 sec.
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, LOW);
+        digitalWrite(motorPin3, HIGH);
+        digitalWrite(motorPin4, LOW);
+        delay(2000);
+        //And this code will stop motors
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, LOW);
+        digitalWrite(motorPin3, LOW);
+        digitalWrite(motorPin4, LOW);
+        
+        Serial.println("Arduino: Moving left!");
+
+        break;
+      }
+      else if (readString == "4"){
+        //This code will turn Motor B counter-clockwise for 2 sec.
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, LOW);
+        digitalWrite(motorPin3, LOW);
+        digitalWrite(motorPin4, HIGH);
+        delay(2000);
+        //And this code will stop motors
+        digitalWrite(motorPin1, LOW);
+        digitalWrite(motorPin2, LOW);
+        digitalWrite(motorPin3, LOW);
+        digitalWrite(motorPin4, LOW);
+        
+        Serial.println("Arduino: Moving right!");    
+
+        break;
+      }
+      else{}
     }
   }
   

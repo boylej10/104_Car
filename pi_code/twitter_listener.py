@@ -4,7 +4,7 @@ import json
 
 # set up the serial port ready to commuicate to the arduino
 SPEED = 9600
-PORT = '/dev/cu.usbmodem1411' # you may need to change this for your system
+PORT = '/dev/cu.usbmodem1421' # you may need to change this for your system
 # check in the arduino IDE: TOOLS: PORT: to see what address your arduino is at.
 ser = serial.Serial(PORT, SPEED, timeout=0, stopbits=serial.STOPBITS_TWO)
 

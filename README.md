@@ -11,3 +11,4 @@ A python script listens to the twitter stream and when it sees a tweet containin
 3. robcannincCU (2017) *hacklab/arduino_python_serial_comms.ino at master · robcanningCU/hacklab* [online] available from https://github.com/robcanningCU/hacklab/blob/master/python_arduino_code/arduino_python_serial_comms/arduino_python_serial_comms.ino(https://github.com/robcanningCU/hacklab/blob/master/python_arduino_code/arduino_python_serial_comms/arduino_python_serial_comms.ino) [26 May 2017]
 
 #### Python script sources:
+1. robcanningCU (2017) *robcanningCU/hacklab* [online] available from http://github.com/robcanningCU/hacklab(http://github.com/robcanningCU/hacklab) [26 May 2017]
